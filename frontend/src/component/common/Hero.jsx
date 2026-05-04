@@ -24,7 +24,7 @@ function Hero() {
           Discover the best hostels for your next adventure
         </p>
 
-        {/* 🔥 Search Box */}
+        {/*  Search Box */}
         <div className="mt-10 bg-white/60 backdrop-blur-md rounded-2xl shadow-2xl p-4 md:p-5">
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-3">
