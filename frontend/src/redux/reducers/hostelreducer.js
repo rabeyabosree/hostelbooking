@@ -1,219 +1,3 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
-
-
-// // API url
-// const API_URL = ""
-
-// // add hostel
-// const addHostel = createAsyncThunk(
-//     "hostels/add", async (hostelData) => {
-//         try {
-//             const token = localStorage.getItem("token");
-//             const response = await axios.post(`${API_URL}/hostels/add`, hostelData,
-//                 {
-//                     headers: {
-//                         Authorization: `Beared ${token}`
-//                     }
-//                 }
-//             );
-//             return response.data;
-
-
-//         } catch (error) {
-
-//         }
-//     }
-// );
-
-// // get all hostels
-// const getAllHostel = createAsyncThunk(
-//     "hostels/all", async () => {
-//         try {
-
-//             const response = await axios.get(`${API_URL}/hostels/all`);
-//             return response.data;
-
-//         } catch (error) {
-
-//         }
-//     }
-// );
-
-// // get single hostel
-// const singleHostel = createAsyncThunk(
-//     "hostels/details", async ({ hostelId }) => {
-//         try {
-//             const response = await axios.get(`${API_URL}/hostels/${hostelId}`);
-//             return response.data;
-
-//         } catch (error) {
-
-//         }
-//     }
-// );
-
-// // edit hostel
-// const editHostel = createAsyncThunk(
-//     "hostels/edit", async ({ hostelData, hostelId }) => {
-//         try {
-//             const token = localStorage.getItem("token");
-//             const response = await axios.put(`${API_URL}/hostels/edit/${hostelId}`, hostelData,
-//                 {
-//                     headers: {
-//                         Authorization: `Beared ${token}`
-//                     }
-//                 }
-//             );
-//             return response.data;
-
-//         } catch (error) {
-
-//         }
-//     }
-// );
-
-// // delete hostel
-// const deleteHostel = createAsyncThunk(
-//     "hostels/delete", async ({ hostelId }) => {
-//         try {
-//             const token = localStorage.getItem("token");
-//             const response = await axios.delete(`${API_URL}/hostels/delete/${hostelId}`,
-//                 {
-//                     headers: {
-//                         Authorization: `Beared ${token}`
-//                     }
-//                 }
-//             );
-//             return response.data;
-
-//         } catch (error) {
-
-//         }
-//     }
-// );
-
-
-
-// const initalState = {
-//     loading: false,
-//     error: null,
-//     success: false,
-//     message: null,
-//     hostels: [],
-//     hostelDetails: null
-// }
-
-
-// const hostelSlice = createSlice({
-//     name: "hostel",
-//     initalState,
-//     reducers,
-//     extraReducer: (builder) => {
-//         builder
-//             .addCase(addHostel.pending, (state, action) => {
-//                 state.loading = true;
-//                 state.error = action.payload;
-//             })
-//             .addCase(addHostel.fullfilled, (state, action) => {
-//                 state.loading = false;
-//                 state.message = action.payload.message;
-//                 state.success = true;
-//                 state.hostels = state.hostels.push(action.payload.data)
-
-//             })
-//             .addCase(addHostel.rejected, (state, action) => {
-//                 state.loading = false;
-//                 state.error = action.payload;
-//                 state.message = action.payload.message;
-
-//             })
-
-//             // get all hostels
-//             .addCase(getAllHostel.pending, (state) => {
-//                 state.loading = true;
-//                 state.error = action.payload;
-
-//             })
-//             .addCase(getAllHostel.fullfilled, (state, action) => {
-//                 state.loading = false;
-//                 state.message = action.payload.message;
-//                 state.success = true;
-//                 state.hostels = action.payload.data
-
-//             })
-//             .addCase(getAllHostel.rejected, (state, action) => {
-//                 state.loading = false;
-//                 state.error = action.payload;
-//                 state.message = action.payload.message;
-
-
-//             })
-
-//             // single hostel
-//             .addCase(singleHostel.pending, (state) => {
-//                 state.loading = true;
-//                 state.error = action.payload;
-
-//             })
-//             .addCase(singleHostel.fullfilled, (state, action) => {
-//                 state.loading = false;
-//                 state.message = action.payload.message;
-//                 state.success = true;
-//                 state.hostels = state.hostels.push(action.payload.data)
-
-//             })
-//             .addCase(singleHostel.rejected, (state, action) => {
-//                 state.loading = false;
-//                 state.error = action.payload;
-//                 state.message = action.payload.message;
-//             })
-
-//             // edit hostel
-//             .addCase(editHostel.pending, (state) => {
-//                 state.loading = true;
-//                 state.error = action.payload;
-
-//             })
-//             .addCase(editHostel.fullfilled, (state, action) => {
-//                 state.loading = false;
-//                 state.message = action.payload.message;
-//                 state.success = true;
-//                 state.hostels = state.hostels.map((item) => item._id === action.payload._id ? item : action.payload)
-
-//             })
-//             .addCase(editHostel.rejected, (state, action) => {
-//                 state.loading = false;
-//                 state.error = action.payload;
-//                 state.message = action.payload.message;
-
-//             })
-
-//             // delete hostel
-//             .addCase(deleteHostel.pending, (state) => {
-//                 state.loading = true;
-//                 state.error = action.payload;
-
-//             })
-//             .addCase(deleteHostel.fullfilled, (state, action) => {
-//                 state.loading = false;
-//                 state.message = action.payload.message;
-//                 state.success = true;
-//                 state.hostels = state.hostels.filter((item) => item._id !== action.payload._id)
-
-//             })
-//             .addCase(deleteHostel.rejected, (state, action) => {
-//                 state.loading = false;
-//                 state.error = action.payload;
-//                 state.message = action.payload.message;
-
-//             })
-//     }
-// });
-
-// export default hostelSlice.reducers;
-
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -247,7 +31,6 @@ export const addHostel = createAsyncThunk(
     }
 );
 
-
 // get all hostels
 export const getAllHostel = createAsyncThunk(
     "hostels/all",
@@ -263,7 +46,6 @@ export const getAllHostel = createAsyncThunk(
         }
     }
 );
-
 
 // get single hostel
 export const singleHostel = createAsyncThunk(
@@ -282,7 +64,6 @@ export const singleHostel = createAsyncThunk(
         }
     }
 );
-
 
 // edit hostel
 export const editHostel = createAsyncThunk(
@@ -309,7 +90,6 @@ export const editHostel = createAsyncThunk(
     }
 );
 
-
 // delete hostel
 export const deleteHostel = createAsyncThunk(
     "hostels/delete",
@@ -334,6 +114,23 @@ export const deleteHostel = createAsyncThunk(
     }
 );
 
+// search hostel
+export const searchHostels = createAsyncThunk(
+    "hostels/search",
+    async (searchData, thunkAPI) => {
+        try {
+            const response = await axios.post(
+                `${API_URL}/hostels/search`, searchData);
+            console.log(searchData)
+            console.log("search data", response.data)
+            return response.data;
+
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.response.data);
+        }
+    }
+);
+
 
 
 const initalState = {
@@ -342,7 +139,8 @@ const initalState = {
     success: false,
     message: null,
     hostels: [],
-    hostelDetails: null
+    searchResult: [],
+    hostelDetails: null,
 };
 
 
@@ -441,6 +239,22 @@ const hostelSlice = createSlice({
                 );
             })
             .addCase(deleteHostel.rejected, (state, action) => {
+                state.loading = false;
+                state.error = action.payload;
+            })
+
+            // search hostel
+            .addCase(searchHostels.pending, (state) => {
+                state.loading = true;
+                state.error = null;
+            })
+            .addCase(searchHostels.fulfilled, (state, action) => {
+                state.loading = false;
+                state.success = true;
+                state.message = action.payload.message;
+                state.searchResult = action.payload.data;
+            })
+            .addCase(searchHostels.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.payload;
             });

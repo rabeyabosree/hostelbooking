@@ -9,12 +9,10 @@ import Footer from './../../component/common/Footer';
 function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
       {/* <Destinations /> */}
       <PopularHostels />
       <AboutUs />
-      <Footer />
     </>
   )
 }

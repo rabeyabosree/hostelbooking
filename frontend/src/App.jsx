@@ -27,10 +27,11 @@ function App() {
       <Router>
         <Routes>
 
-          <Route path="/" element={<Home />} />
+         
           {/* public Routes */}
 
           <Route element={<ComponentLayout />}>
+           <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin" element={<AdminLogin />} />

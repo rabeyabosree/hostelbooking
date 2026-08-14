@@ -9,9 +9,9 @@ function Footer() {
 
       <div className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
 
-       <Logo />
+        <Logo />
 
-        {/* Links */}
+        {/*links */}
         <div>
           <h3 className="text-white font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -22,7 +22,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Support */}
+        {/* support */}
         <div>
           <h3 className="text-white font-semibold mb-3">Support</h3>
           <ul className="space-y-2 text-sm">
@@ -32,7 +32,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* contact */}
         <div className="space-y-3">
           <h3 className="text-white font-semibold">Contact</h3>
 
@@ -48,7 +48,7 @@ function Footer() {
             <MdEmail /> support@stayfinder.com
           </p>
 
-          {/* Social */}
+          {/* social */}
           <div className="flex gap-3 pt-2 text-lg">
             <FaFacebookF className="cursor-pointer hover:text-white" />
             <FaInstagram className="cursor-pointer hover:text-white" />
@@ -59,7 +59,7 @@ function Footer() {
 
       </div>
 
-      {/* Bottom */}
+      {/* bottom */}
       <div className="border-t border-gray-700 text-center py-4 text-sm">
         © {new Date().getFullYear()} StayFinder. All rights reserved.
       </div>
