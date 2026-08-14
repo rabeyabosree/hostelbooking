@@ -4,7 +4,6 @@ This is a full-stack backend system for a Hostel Booking platform built using No
 
 
 ## 🚀 Features
-
 - 🔐 User Authentication (JWT based)
 - 👤 Role-based access (User/Admin)
 - 🏠 Hostel listing management (CRUD)
@@ -13,7 +12,6 @@ This is a full-stack backend system for a Hostel Booking platform built using No
 - 📦 File & image upload using Multer
 - 🧾 Booking system with status tracking
 - 🌐 RESTful API architecture
-- 🔔 Notification system (if applicable)
 
 
 ## 🛠️ Tech Stack
