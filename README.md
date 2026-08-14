@@ -1,50 +1,89 @@
-# 🏠 Hostel Booking Backend (MERN Stack)
+# Hostel Booking Project
 
-This is a full-stack backend system for a Hostel Booking platform built using Node.js, Express, MongoDB, and Cloudinary. It supports authentication, real-time features, and image/file uploads.
+A hostel booking platform built with the MERN stack. Users can browse hostels, make bookings, and chat in real time.
 
+## Features
 
-## 🚀 Features
-- 🔐 User Authentication (JWT based)
-- 👤 Role-based access (User/Admin)
-- 🏠 Hostel listing management (CRUD)
-- 📸 Image upload using Cloudinary
-- 💬 Real-time chat system (Socket.IO)
-- 📦 File & image upload using Multer
-- 🧾 Booking system with status tracking
-- 🌐 RESTful API architecture
+* User authentication with JWT
+* Role-based access (User/Admin)
+* Hostel management
+* Image and file upload with Cloudinary and Multer
+* Booking with status tracking
+* Real-time chat with Socket.IO
 
+## Tech Stack
 
-## 🛠️ Tech Stack
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- Cloudinary
-- Multer
-- Socket.IO
-- Axios
+* React.js
+* Node.js
+* Express.js
+* MongoDB & Mongoose
+* JWT
+* Cloudinary
+* Multer
+* Socket.IO
+* Axios
 
-## 📂 Project Structure
-- backend/
-├── controllers/
-├── models/
-├── routes/
-├── middleware/
-├── utils/
-├── index.js
+## Project Structure
 
+```text
+hostel-booking/
+├── frontend/
+└── backend/
+    ├── controllers/
+    ├── models/
+    ├── routes/
+    ├── middleware/
+    ├── utils/
+    └── index.js
+```
 
-## ⚙️ Installation & Setup
+## Setup
+
+Clone the repository:
+
 ```bash
-git clone https://github.com/your-username/hostel-booking-backend
-cd backend
+git clone https://github.com/your-username/hostel-booking
+cd hostel-booking
+```
+
+Install dependencies for both frontend and backend:
+
+```bash
+cd frontend
 npm install
 
-Create .env file:
+cd ../backend
+npm install
+```
+
+Create a `.env` file inside the backend folder:
+
+```env
 PORT=5000
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret
+
 CLOUD_NAME=your_cloudinary_name
-API_KEY=your_key
-API_SECRET=your_secret
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_SECRET=your_cloudinary_secret
+```
+
+## Run the Project
+
+Start the backend:
+
+```bash
+cd backend
 npm start
+```
+
+Start the frontend in another terminal:
+
+```bash
+cd frontend
+npm start
+```
+
+Make sure both frontend and backend are running before using the application.
+
+> Keep your `.env` file private and never commit it to GitHub.
