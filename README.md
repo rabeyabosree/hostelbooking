@@ -9,6 +9,7 @@ A hostel booking platform built with the MERN stack. Users can browse hostels, m
 * Hostel management
 * Image and file upload with Cloudinary and Multer
 * Booking with status tracking
+* review rating 
 
 
 ## Tech Stack
