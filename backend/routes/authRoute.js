@@ -40,6 +40,7 @@ router.post("/register", async (req, res) => {
         const user = await User.create({
             name,
             email,
+            role,
             password: hashedPassword
         });
 
@@ -123,6 +124,8 @@ router.post("/admin/login", async (req, res) => {
                 message: "Invalid credentials"
             });
         }
+
+        console.log(user)
 
         // check admin role
         if (user.role !== "admin") {

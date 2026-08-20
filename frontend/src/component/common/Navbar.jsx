@@ -80,11 +80,11 @@ function Navbar() {
 
         {/* Desktop Right Side */}
         <div className="hidden md:flex items-center gap-4 ml-18">
-          <button className="px-4 py-2 rounded-full border border-green-600 text-green-600 hover:bg-green-100 transition">
+          <button onClick={()=> navigate("/login")} className="px-4 py-2 rounded-full border border-green-600 text-green-600 hover:bg-green-100 transition">
             Login
           </button>
 
-          <button className="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition">
+          <button onClick={()=> navigate("/register")} className="px-4 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition">
             Sign Up
           </button>
 

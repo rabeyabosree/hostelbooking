@@ -4,12 +4,13 @@ import { MapPin, CalendarDays, Users, Search } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchHostels } from "../../redux/reducers/hostelreducer";
 import { useNavigate } from 'react-router-dom';
+import SearchResult from "./SearchResult";
 
 function Hero() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { searchResult } = useSelector((state) => state.hostel);
-  
+
 
   const [form, setForm] = useState({
     destination: "",
@@ -17,6 +18,8 @@ function Hero() {
     checkOut: "",
     guests: 1
   });
+
+  console.log(searchResult)
 
   const handleChange = (e) => {
     setForm({
@@ -109,6 +112,9 @@ function Hero() {
               <Search size={18} />
               Search
             </button>
+            {
+              searchResult < 0 && <SearchResult />
+            }
 
           </div>
         </div>

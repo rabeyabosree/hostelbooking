@@ -15,7 +15,8 @@ const authShcema = new mongoose.Schema({
         requied: true
     },
     role: {
-        type: [" admin", "user"],
+        type: String,
+        enum: [" admin", "user"],
         default: "user"
     }
 

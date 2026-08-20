@@ -3,7 +3,9 @@ const core = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const data = require("./data/data");
-const Products = require("./models/roomModel")
+const Hostel = require("./models/hostelMode");
+const Rooms = require("./models/roomModel");
+
 
 // create app 
 const app = express()
@@ -25,7 +27,27 @@ mongoose.connect(MONGO_URL)
     .then(() => console.log("mongodb connected successfully"))
     .catch((err) => console.log("mongodb error", err))
 
+// const addRoomsToHostels = async () => {
+//     const hostels = await Hostel.find();
+//     const rooms = await Rooms.find();
+
+//     for (const room of rooms) {
+//         const hostel = hostels.find(
+//             hostel => hostel._id.toString() === room.hostelId.toString()
+//         );
+
+//         if (hostel) {
+//             hostel.rooms.push(room._id);
+//             await hostel.save();
+//         }
+//     }
+// };
+
+// addRoomsToHostels()
+
+
 // const seedProducts = async () => {
+
 //   try {
 //     await mongoose.connect(MONGO_URL);
 //     console.log("MongoDB Connected");
@@ -42,6 +64,8 @@ mongoose.connect(MONGO_URL)
 //   }
 // };
 // seedProducts();
+
+
 
 
 

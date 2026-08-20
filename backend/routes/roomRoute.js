@@ -39,6 +39,14 @@ router.post("/:hostelId", multer.array("images", 5), async (req, res) => {
             images
         });
 
+        await Hostel.findByIdAndUpdate(hostelId, {
+            $push: { rooms: room._id}
+        })
+
+        // const rooms = Rooms.find({hostelId});
+        // hostel.rooms = (await rooms).map((room) => room._id)
+        // await hostel.save()
+
         res.status(201).json({
             success: true,
             message: "room created successfully",

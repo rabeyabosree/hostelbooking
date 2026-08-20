@@ -87,19 +87,24 @@ router.post("/search", async (req, res) => {
 
         //  Clean destination
         const cleanDestination = destination?.trim();
+        console.log(req.body)
+        console.log("cleanDestination", cleanDestination)
 
         let query = {};
 
         if (cleanDestination) {
             const words = cleanDestination.split(" ");
-            query.location = {
-                $regex: words.join("|"),
+            query.destinations = {
+                $regex: `^${cleanDestination}`,
                 $options: "i"
             };
         }
+       
 
         //  Get hostels + rooms
         const hostels = await Hostel.find(query).populate("rooms");
+       
+       console.log("hostels", hostels)
 
         //  Get all bookings once 
         let bookingQuery = {
@@ -113,6 +118,7 @@ router.post("/search", async (req, res) => {
         }
 
         const allBookings = await Bookings.find(bookingQuery);
+        console.log("allBookings", allBookings)
 
         //  Group bookings by roomId for fast lookup
         const bookingMap = {};
@@ -129,7 +135,7 @@ router.post("/search", async (req, res) => {
 
         for (let hostel of hostels) {
             let availableRooms = [];
-
+           
             for (let room of hostel.rooms) {
                 // Guest filter
                 if (guests && room.maxGuest < Number(guests)) continue;
@@ -139,6 +145,7 @@ router.post("/search", async (req, res) => {
                 if (roomBookings.length === 0) {
                     availableRooms.push(room);
                 }
+                console.log('availabe rooms')
             }
 
             if (availableRooms.length > 0) {
@@ -147,7 +154,10 @@ router.post("/search", async (req, res) => {
                     rooms: availableRooms
                 });
             }
+            
         }
+
+        console.log("availableHostels", availableHostels)
 
         res.status(200).json({
             success: true,
@@ -279,7 +289,6 @@ router.delete("/delete/:id", async (req, res) => {
         });
     }
 });
-
 
 
 module.exports = router;

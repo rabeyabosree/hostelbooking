@@ -121,7 +121,6 @@ export const searchHostels = createAsyncThunk(
         try {
             const response = await axios.post(
                 `${API_URL}/hostels/search`, searchData);
-            console.log(searchData)
             console.log("search data", response.data)
             return response.data;
 

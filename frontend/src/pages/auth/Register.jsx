@@ -17,6 +17,7 @@ function Register() {
     password: ""
   })
 
+  console.log(form)
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -72,6 +73,7 @@ function Register() {
               />
             </div>
           </div>
+        
 
           {/* Password */}
           <div>
