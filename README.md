@@ -9,7 +9,8 @@ A hostel booking platform built with the MERN stack. Users can browse hostels, m
 * Hostel management
 * Image and file upload with Cloudinary and Multer
 * Booking with status tracking
-* Real-time chat with Socket.IO
+* review rating 
+
 
 ## Tech Stack
 
@@ -20,7 +21,6 @@ A hostel booking platform built with the MERN stack. Users can browse hostels, m
 * JWT
 * Cloudinary
 * Multer
-* Socket.IO
 * Axios
 
 ## Project Structure
